@@ -2,13 +2,13 @@
 
 SuCCESs is a bottom-up Integrated Assessment Model (IAM) that represents energy production and use, materials production, land-use and climate globally. The primary use-case for SuCCESs is to calculate long-term scenarios of these systems until 2100, e.g. to find cost-effective strategies to reduce greenhouse gas emissions and reach specified climate targets globally.
 
-The model is described in detail in the paper " SuCCESs – a global IAM for exploring the interactions between energy, materials, land-use and climate systems in long-term scenarios": 
+The model is described in detail in the paper "SuCCESs – a global IAM for exploring the interactions between energy, materials, land-use and climate systems in long-term scenarios": https://gmd.copernicus.org/preprints/gmd-2024-196/
 
-**Citation:** Tommi Ekholm, Nadine-Cyra Freistetter, Tuukka Mattlar, Theresa Schaber, Aapo Rautiainen: SuCCESs – a global IAM for exploring the interactions between energy, materials, land-use and climate systems in long-term scenarios. 
+**Citation:** Tommi Ekholm, Nadine-Cyra Freistetter, Tuukka Mattlar, Theresa Schaber, Aapo Rautiainen: SuCCESs – a global IAM for exploring the interactions between energy, materials, land-use and climate systems in long-term scenarios. Geoscientific Model Development Discussions [preprint], https://doi.org/10.5194/gmd-2024-196, 2024.
 
 ## How to run SuCCESs
 SuCCESs is implemented in GAMS and requires an optimization solver (preferably an LP solver, e.g. CPLEX or Gurobi) to run the model. We have also run the model successfully with an NLP solver, but solving the model takes more time with NLP solvers.
-The model works straight out of the box by running SuCCESs.gms. Save the output to a GDX file by e.g. an argument ‘GDX = SuCCESs_results’. You can use the SuCCESs toolbox to visualize and analyze the scenario.
+The model works straight out of the box by running SuCCESs.gms. Save the output to a GDX file by e.g. an argument ‘GDX = SuCCESs_results’. You can use the [SuCCESs toolbox](https://github.com/SuCCESsIAM/SuCCESsIAM-toolbox/) to visualize and analyze the scenario.
 If you want to do modifications to the model (e.g. modify parameters, introduce new constraints), it is best to include all changes and additions through separate files, which can be read into GAMS in the ‘Scenario files’ section of SuCCESs.gms. This section contains already some scenario files, e.g. Scenario_15C_constraint.gms, which introduces a 1.5C limit for temperature increase for year 2100, which the model needs to satisfy.
 
 **Note:** SuCCEss uses the GAMS option $ONMULTI, which allows multiple additions of set elements or data (e.g. the set of processes can be introduced in multiple files, instead of a single set declaration). This affects the behaviour of the GAMS code, so that all data entries are read first, and all other assignments (e.g. calculations with the data) are done only after that. This can produce seemingly unexpected results, as the result of a calculation can be affected by data entry that comes only after the calculation in the model code. It is best to give all input data so that it does not require further calculations in GAMS.
