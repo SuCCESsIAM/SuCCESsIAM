@@ -2,9 +2,9 @@
 
 SuCCESs is a bottom-up Integrated Assessment Model (IAM) that represents energy production and use, materials production, land-use and climate globally. The primary use-case for SuCCESs is to calculate long-term scenarios of these systems until 2100, e.g. to find cost-effective strategies to reduce greenhouse gas emissions and reach specified climate targets globally.
 
-The model is described in detail in the paper "SuCCESs – a global IAM for exploring the interactions between energy, materials, land-use and climate systems in long-term scenarios": https://gmd.copernicus.org/preprints/gmd-2024-196/
+The model is described in detail in the paper [SuCCESs – a global IAM for exploring the interactions between energy, materials, land-use and climate systems in long-term scenarios](https://doi.org/10.5194/gmd-18-4805-2025).
 
-**Citation:** Tommi Ekholm, Nadine-Cyra Freistetter, Tuukka Mattlar, Theresa Schaber, Aapo Rautiainen: SuCCESs – a global IAM for exploring the interactions between energy, materials, land-use and climate systems in long-term scenarios. Geoscientific Model Development Discussions [preprint], https://doi.org/10.5194/gmd-2024-196, 2024.
+**Citation:** Tommi Ekholm, Nadine-Cyra Freistetter, Tuukka Mattlar, Theresa Schaber, Aapo Rautiainen: SuCCESs – a global IAM for exploring the interactions between energy, materials, land-use and climate systems in long-term scenarios. Geoscientific Model Development 18, 4805–4822, doi:10.5194/gmd-18-4805-2025, 2025.
 
 ## How to run SuCCESs
 SuCCESs is implemented in GAMS and requires an optimization solver (preferably an LP solver, e.g. CPLEX or Gurobi) to run the model. We have also run the model successfully with an NLP solver, but solving the model takes more time with NLP solvers.
